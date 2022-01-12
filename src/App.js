@@ -1,8 +1,8 @@
-import './App.css'
 import { useState } from 'react'
 import Form from './Componets/Form/Form'
 import Display from './Componets/Display/Display'
 import Search from './Componets/Search/Search'
+
 
 function App() {
   const [contacts, setContacts] = useState([
