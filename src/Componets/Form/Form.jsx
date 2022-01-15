@@ -1,7 +1,10 @@
 import React from 'react'
 import { nanoid } from 'nanoid'
 import { addContact } from './../../app/actions'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { Label } from '../../styled/Label'
+import { Input } from '../../styled/Input'
+import { Button } from '../../styled/Button'
 
 const Form = ({ contacts }) => {
   const dispatch = useDispatch()
@@ -26,8 +29,8 @@ const Form = ({ contacts }) => {
   return (
     <form onSubmit={seveContact}>
       <div>
-        <label htmlFor='name'>Name</label>
-        <input
+        <Label htmlFor='name'>Name</Label>
+        <Input
           required
           type='text'
           name='name'
@@ -36,8 +39,8 @@ const Form = ({ contacts }) => {
         />
       </div>
       <div>
-        <label htmlFor='number'>Number</label>
-        <input
+        <Label htmlFor='number'>Number</Label>
+        <Input
           required
           type='tel'
           name='number'
@@ -45,7 +48,7 @@ const Form = ({ contacts }) => {
           title='Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
         />
       </div>
-      <button>Add contact</button>
+      <Button>Add contact</Button>
     </form>
   )
 }

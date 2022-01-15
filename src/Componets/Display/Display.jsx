@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteContact } from '../../app/actions'
+import { Button } from '../../styled/Button'
 
 const Display = ({ contacts }) => {
   const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const Display = ({ contacts }) => {
             <span>
               {name} {number}
             </span>
-            <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
+            <Button onClick={() => dispatch(deleteContact(id))}>Delete</Button>
           </li>
         ))}
     </ul>

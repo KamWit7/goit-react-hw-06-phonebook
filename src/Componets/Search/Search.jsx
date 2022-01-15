@@ -1,14 +1,16 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { changeFilter } from './../../app/actions'
+import { Label } from '../../styled/Label'
+import { Input } from '../../styled/Input'
 
 const Search = () => {
   const dispatch = useDispatch()
 
   return (
     <>
-      <label htmlFor='filter'>Find contacts by name </label>
-      <input
+      <Label htmlFor='filter'>Find contacts by name </Label>
+      <Input
         required
         type='text'
         name='filter'

@@ -12,11 +12,14 @@ function App() {
   return (
     <div>
       <section>
+        {/*  */}
         <h1>Phonebook</h1>
         <Form contacts={contacts} />
+        {/*  */}
         <h2>Contacts</h2>
         <Search />
         <Display contacts={contacts} />
+        {/*  */}
       </section>
     </div>
   )
