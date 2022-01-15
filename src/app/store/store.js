@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { contacts } from './reducer'
 
 export const store = configureStore({
-  contacts: {
-    items: [],
-    filter: '',
+  reducer: {
+    contacts,
   },
 })

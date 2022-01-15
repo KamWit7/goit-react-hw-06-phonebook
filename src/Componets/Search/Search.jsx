@@ -1,6 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { changeFilter } from './../../app/actions'
 
-const Search = ({ setFilter }) => {
+const Search = () => {
+  const dispatch = useDispatch()
+
   return (
     <>
       <label htmlFor='filter'>Find contacts by name </label>
@@ -8,7 +12,7 @@ const Search = ({ setFilter }) => {
         required
         type='text'
         name='filter'
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={(e) => dispatch(changeFilter(e.target.value))}
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title='Please give me a name.'
       />

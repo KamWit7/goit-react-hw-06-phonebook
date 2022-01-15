@@ -1,11 +1,10 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteContact } from '../../app/actions'
 
-const Display = ({ contacts, filter, setContacts }) => {
-  const removeUser = (removeId) => {
-    setContacts((prevContacts) =>
-      prevContacts.filter(({ id }) => id !== removeId)
-    )
-  }
+const Display = ({ contacts }) => {
+  const dispatch = useDispatch()
+  const filter = useSelector((state) => state.contacts.filter)
 
   return (
     <ul>
@@ -16,7 +15,7 @@ const Display = ({ contacts, filter, setContacts }) => {
             <span>
               {name} {number}
             </span>
-            <button onClick={() => removeUser(id)}>Delete</button>
+            <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
           </li>
         ))}
     </ul>
