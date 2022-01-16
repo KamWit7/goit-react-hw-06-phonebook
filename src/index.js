@@ -1,14 +1,25 @@
+import App from './App'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import { Provider } from 'react-redux'
-import * as serviceWorker from './serviceWorker'
 import { store } from './app/store/store'
+import { Provider } from 'react-redux'
+import { createGlobalStyle } from 'styled-components'
+import * as serviceWorker from './serviceWorker'
+
+const GlobalStyle = createGlobalStyle`
+body{
+  background-color: #282c34;
+  color: wheat;
+}
+li{
+  list-style: none;
+}
+`
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <GlobalStyle />
       <App />
     </Provider>
   </React.StrictMode>,

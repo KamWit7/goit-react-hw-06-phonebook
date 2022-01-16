@@ -1,27 +1,27 @@
 import { useSelector } from 'react-redux'
+import { Title } from './styled/Title'
+import { Section } from './styled/Section'
 import Form from './Componets/Form/Form'
-import Display from './Componets/Display/Display'
 import Search from './Componets/Search/Search'
+import Display from './Componets/Display/Display'
 
 function App() {
   const contacts = useSelector((state) => state.contacts.items)
 
-  const state = useSelector((state) => state)
-  console.log('state', state)
+  // const state = useSelector((state) => state)
+  // console.log('state', state)
 
   return (
-    <div>
-      <section>
-        {/*  */}
-        <h1>Phonebook</h1>
-        <Form contacts={contacts} />
-        {/*  */}
-        <h2>Contacts</h2>
-        <Search />
-        <Display contacts={contacts} />
-        {/*  */}
-      </section>
-    </div>
+    <Section>
+      {/*  */}
+      <Title>Phonebook</Title>
+      <Form contacts={contacts} />
+      {/*  */}
+      <Title as='h2'>Contacts</Title>
+      <Search />
+      <Display contacts={contacts} />
+      {/*  */}
+    </Section>
   )
 }
 

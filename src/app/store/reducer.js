@@ -1,4 +1,4 @@
-import { createAction, createReducer } from '@reduxjs/toolkit'
+import { createReducer } from '@reduxjs/toolkit'
 import { addContact, deleteContact, changeFilter } from '../actions'
 
 const initialState = {

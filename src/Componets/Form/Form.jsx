@@ -1,10 +1,16 @@
 import React from 'react'
-import { nanoid } from 'nanoid'
-import { addContact } from './../../app/actions'
-import { useDispatch } from 'react-redux'
+import styled from 'styled-components'
 import { Label } from '../../styled/Label'
 import { Input } from '../../styled/Input'
+import { nanoid } from 'nanoid'
 import { Button } from '../../styled/Button'
+import { Wrapper } from '../../styled/wrapper'
+import { addContact } from './../../app/actions'
+import { useDispatch } from 'react-redux'
+
+const WrapForm = styled(Wrapper)`
+  width: 40rem;
+`
 
 const Form = ({ contacts }) => {
   const dispatch = useDispatch()
@@ -27,7 +33,7 @@ const Form = ({ contacts }) => {
   }
 
   return (
-    <form onSubmit={seveContact}>
+    <WrapForm as='form' onSubmit={seveContact}>
       <div>
         <Label htmlFor='name'>Name</Label>
         <Input
@@ -49,7 +55,7 @@ const Form = ({ contacts }) => {
         />
       </div>
       <Button>Add contact</Button>
-    </form>
+    </WrapForm>
   )
 }
 

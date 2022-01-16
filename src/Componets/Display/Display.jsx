@@ -1,25 +1,26 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { deleteContact } from '../../app/actions'
 import { Button } from '../../styled/Button'
+import { Item, List } from '../../styled/List'
+import { deleteContact } from '../../app/actions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Display = ({ contacts }) => {
   const dispatch = useDispatch()
   const filter = useSelector((state) => state.contacts.filter)
 
   return (
-    <ul>
+    <List>
       {contacts
         .filter(({ name }) => (filter !== '' ? name.includes(filter) : true))
         .map(({ id, name, number }) => (
-          <li key={id}>
+          <Item key={id}>
             <span>
               {name} {number}
             </span>
             <Button onClick={() => dispatch(deleteContact(id))}>Delete</Button>
-          </li>
+          </Item>
         ))}
-    </ul>
+    </List>
   )
 }
 
