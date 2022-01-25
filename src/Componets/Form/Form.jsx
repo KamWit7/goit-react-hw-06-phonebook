@@ -5,7 +5,7 @@ import { Input } from '../../styled/Input'
 import { nanoid } from 'nanoid'
 import { Button } from '../../styled/Button'
 import { Wrapper } from '../../styled/wrapper'
-import { addContact } from './../../app/actions'
+import { addContact } from '../../app/actions'
 import { useDispatch } from 'react-redux'
 
 const WrapForm = styled(Wrapper)`

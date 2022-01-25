@@ -2,7 +2,7 @@ import React from 'react'
 import { Label } from '../../styled/Label'
 import { Input } from '../../styled/Input'
 import { useDispatch } from 'react-redux'
-import { changeFilter } from './../../app/actions'
+import { changeFilter } from '../../app/actions'
 
 const Search = () => {
   const dispatch = useDispatch()
