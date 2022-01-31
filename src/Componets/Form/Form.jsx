@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Label } from '../../styled/Label'
-import { Input } from '../../styled/Input'
-import { nanoid } from 'nanoid'
-import { Button } from '../../styled/Button'
-import { Wrapper } from '../../styled/wrapper'
-import { addContact } from '../../app/actions'
-import { useDispatch } from 'react-redux'
+import React from "react"
+import styled from "styled-components"
+import { Label } from "../../styled/Label"
+import { Input } from "../../styled/Input"
+import { nanoid } from "nanoid"
+import { Button } from "../../styled/Button"
+import { Wrapper } from "../../styled/wrapper"
+import { addContact } from "../../app/actions"
+import { useDispatch, useSelector } from "react-redux"
 
 const WrapForm = styled(Wrapper)`
   width: 40rem;
@@ -33,25 +33,25 @@ const Form = ({ contacts }) => {
   }
 
   return (
-    <WrapForm as='form' onSubmit={seveContact}>
+    <WrapForm as="form" onSubmit={seveContact}>
       <div>
-        <Label htmlFor='name'>Name</Label>
+        <Label htmlFor="name">Name</Label>
         <Input
           required
-          type='text'
-          name='name'
+          type="text"
+          name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         />
       </div>
       <div>
-        <Label htmlFor='number'>Number</Label>
+        <Label htmlFor="number">Number</Label>
         <Input
           required
-          type='tel'
-          name='number'
-          pattern='\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
-          title='Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+          type="tel"
+          name="number"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         />
       </div>
       <Button>Add contact</Button>

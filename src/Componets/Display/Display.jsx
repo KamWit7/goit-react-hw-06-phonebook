@@ -1,8 +1,8 @@
-import React from 'react'
-import { Button } from '../../styled/Button'
-import { Item, List } from '../../styled/List'
-import { deleteContact } from '../../app/actions'
-import { useDispatch, useSelector } from 'react-redux'
+import React from "react"
+import { Button } from "../../styled/Button"
+import { Item, List } from "../../styled/List"
+import { deleteContact } from "../../app/actions"
+import { useDispatch, useSelector } from "react-redux"
 
 const Display = ({ contacts }) => {
   const dispatch = useDispatch()
@@ -11,7 +11,7 @@ const Display = ({ contacts }) => {
   return (
     <List>
       {contacts
-        .filter(({ name }) => (filter !== '' ? name.includes(filter) : true))
+        .filter(({ name }) => (filter !== "" ? name.includes(filter) : true))
         .map(({ id, name, number }) => (
           <Item key={id}>
             <span>
