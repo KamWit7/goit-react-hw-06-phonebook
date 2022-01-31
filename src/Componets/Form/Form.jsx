@@ -6,7 +6,7 @@ import { nanoid } from "nanoid"
 import { Button } from "../../styled/Button"
 import { Wrapper } from "../../styled/wrapper"
 import { addContact } from "../../app/actions"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 const WrapForm = styled(Wrapper)`
   width: 40rem;
