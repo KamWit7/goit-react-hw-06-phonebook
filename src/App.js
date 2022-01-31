@@ -13,6 +13,8 @@ function App() {
     localStorage.setItem('contacts', JSON.stringify(contacts))
   }, [contacts])
 
+  console.log('contacts', contacts)
+
   return (
     <Section>
       <Title>Phonebook</Title>
